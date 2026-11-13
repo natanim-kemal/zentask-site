@@ -1,22 +1,23 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
-const playfair = Playfair_Display({ 
-  subsets: ['latin'], 
-  variable: '--font-serif',
-  display: 'swap',
-});
-
-const inter = Inter({ 
-  subsets: ['latin'], 
+const geistSans = Geist({
+  subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 });
 
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: 'ZenTask - Productivity Reimagined',
-  description: 'Experience the future of productivity with ZenTask.',
+  title: 'ZenTask | Productivity, Reimagined',
+  description:
+    'Agentic task management with focus mode, integrated Pomodoro, and insightful analytics. Experience the flow of ZenTask.',
 };
 
 export default function RootLayout({
@@ -26,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${inter.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
     </html>
