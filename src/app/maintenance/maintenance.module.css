@@ -24,6 +24,9 @@
     linear-gradient(90deg, rgba(20, 20, 18, 0.03) 1px, transparent 1px),
     var(--card);
   background-size: 2.25rem 2.25rem, 2.25rem 2.25rem, 100% 100%;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--panel-shadow);
   padding: 3rem 2.5rem 2rem;
   display: flex;
   flex-direction: column;
