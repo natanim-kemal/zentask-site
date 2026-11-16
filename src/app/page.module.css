@@ -18,7 +18,10 @@
 
 .frame {
   border: 1px solid var(--line);
-  background: var(--background);
+  background: var(--card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--panel-shadow);
 }
 
 .strip {
@@ -181,7 +184,9 @@
   text-align: center;
   gap: 0.5rem;
   padding: 2rem 1.5rem;
-  background: var(--background);
+  background: var(--card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   transition: background 0.25s ease;
 }
 
