@@ -41,7 +41,7 @@ export default function Home() {
               <span className="bracket bracket-bl" />
               <span className={styles.line} />
               <span className={styles.reflection} />
-              <Image src="/zentask.png" alt="" width={132} height={132} className={styles.mark} priority />
+              <Image src="/zentask-mark.png" alt="" width={132} height={132} className={styles.mark} priority />
               <span className={styles.scanTag}>ZENTASK // FOCUS</span>
             </div>
             <div className={styles.heroText}>
