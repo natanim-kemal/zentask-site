@@ -1,45 +1,72 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { GithubMark } from './icons';
-import { ThemeToggle } from './ThemeToggle';
+import { GithubMark, ArrowUpRight } from './icons';
 
-export function SiteNav() {
+type NavKey = 'home' | 'features' | 'maintenance';
+
+export function SiteNav({ active }: { active?: NavKey }) {
   return (
-    <nav className="nav">
-      <Link href="/" className="logo" aria-label="ZenTask home">
-        <Image src="/zentask-mark.png" alt="" width={24} height={24} priority />
-        ZenTask
-      </Link>
-      <div className="navLinks">
-        <Link href="/features" className="navLink">Features</Link>
-        <ThemeToggle />
+    <div className="navShell">
+      <nav className="navBar" aria-label="Main">
+        <Link href="/" className="navBrand" aria-label="ZenTask home">
+          <Image src="/zentask-mark.png" alt="" width={18} height={18} priority />
+          <span>ZenTask</span>
+        </Link>
+        <Link
+          href="/"
+          className={`navItem navItemText ${active === 'home' ? 'navItemActive' : ''}`}
+          aria-current={active === 'home' ? 'page' : undefined}
+        >
+          System
+        </Link>
+        <Link
+          href="/features"
+          className={`navItem navItemText ${active === 'features' ? 'navItemActive' : ''}`}
+          aria-current={active === 'features' ? 'page' : undefined}
+        >
+          Features
+        </Link>
         <Link
           href="https://github.com/natanim-kemal/zen-task"
-          className="navIcon"
+          className="navItem navIcon"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
           title="GitHub"
         >
-          <GithubMark size={18} />
+          <GithubMark size={16} />
         </Link>
         <Link href="/maintenance" className="navCta">
-          Get Started
+          Get ZenTask
+          <ArrowUpRight size={13} />
         </Link>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }
 
 export function SiteFooter() {
   return (
     <footer className="footer">
-      <Link href="/" className="footerWordmark">
-        <Image src="/zentask-mark.png" alt="" width={18} height={18} />
-        <span>ZenTask</span>
-        <span>Productivity, Reimagined.</span>
-      </Link>
-      <span className="footerMeta">© 2026 ZenTask</span>
+      <div className="footerInner">
+        <div className="footerBrand">
+          <Image src="/zentask-mark.png" alt="" width={16} height={16} />
+          <span>ZenTask</span>
+          <span className="footerTag">A quiet system for loud minds.</span>
+        </div>
+        <div className="footerLinks">
+          <Link href="/features">Features</Link>
+          <Link
+            href="https://github.com/natanim-kemal/zen-task"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </Link>
+          <Link href="/maintenance">Status</Link>
+        </div>
+        <span className="footerMeta">© 2026 ZenTask — Built quiet</span>
+      </div>
     </footer>
   );
 }

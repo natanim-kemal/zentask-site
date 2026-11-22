@@ -29,9 +29,7 @@ export default function Maintenance() {
           <span className="bracket bracket-bl" />
           <div className={styles.glow} aria-hidden="true" />
 
-          <span className="kicker">
-            <span className={styles.pulse} /> Build in progress
-          </span>
+          <span className="kicker">Build in progress</span>
 
           <h1 className={styles.title}>This site is still in the workshop.</h1>
           <p className={styles.subtitle}>
@@ -60,12 +58,12 @@ export default function Maintenance() {
           </div>
 
           <div className={styles.actions}>
-            <Link href="/" className={styles.primaryButton}>
+            <Link href="/" className="btn btnPrimary">
               Back to home
             </Link>
             <Link
               href="https://github.com/natanim-kemal/zen-task"
-              className={styles.secondaryButton}
+              className="btn btnGhost"
               target="_blank"
               rel="noopener noreferrer"
             >

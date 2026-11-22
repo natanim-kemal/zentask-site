@@ -7,10 +7,10 @@
 
 .pageHeader {
   position: relative;
-  max-width: 1200px;
+  max-width: var(--page);
   width: 100%;
   margin: 0 auto;
-  padding: 4.5rem 1.5rem 4rem;
+  padding: calc(var(--nav-h) + 5rem) var(--pad) 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,8 +22,8 @@
 .title {
   font-size: clamp(2.4rem, 5.6vw, 4.1rem);
   line-height: 1.04;
-  letter-spacing: -0.035em;
-  font-weight: 600;
+  letter-spacing: -0.045em;
+  font-weight: 500;
   max-width: 16ch;
 }
 
@@ -40,7 +40,7 @@
   gap: 1px;
   background: var(--line);
   border-bottom: 1px solid var(--line);
-  max-width: 1200px;
+  max-width: var(--page);
   width: 100%;
   margin: 0 auto;
 }
@@ -51,15 +51,13 @@
   flex-direction: column;
   gap: 0.7rem;
   padding: 2.2rem 1.75rem 2.6rem;
-  background: var(--card);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  background: var(--bg);
   transition: background 0.25s ease;
   overflow: hidden;
 }
 
 .card:hover {
-  background: var(--card-hover);
+  background: var(--surface);
 }
 
 .cardIcon {
@@ -69,7 +67,7 @@
 
 .cardTitle {
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.025em;
 }
 
@@ -93,7 +91,7 @@
 .cardPlus::after {
   content: "";
   position: absolute;
-  background: var(--foreground);
+  background: var(--fg);
 }
 
 .cardPlus::before {
@@ -115,21 +113,21 @@
 .span12 { grid-column: span 12; }
 
 .dark {
-  background: #101109;
-  color: #f1f1ea;
+  background: var(--surface);
+  color: var(--fg);
 }
 
 .dark:hover {
-  background: #16170e;
+  background: var(--surface-2);
 }
 
 .dark .cardDesc {
-  color: rgba(241, 241, 234, 0.62);
+  color: var(--muted);
 }
 
 .dark .cardPlus::before,
 .dark .cardPlus::after {
-  background: rgba(241, 241, 234, 0.5);
+  background: rgba(243, 246, 252, 0.5);
 }
 
 .darkMeta {
@@ -138,14 +136,14 @@
   font-family: var(--font-mono);
   font-size: 0.62rem;
   letter-spacing: 0.16em;
-  color: rgba(241, 241, 234, 0.42);
+  color: var(--faint);
 }
 
 .darkGlow {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 90% at 88% -10%, rgba(0, 112, 243, 0.32), transparent 62%),
+    radial-gradient(ellipse 70% 90% at 88% -10%, rgba(47, 107, 255, 0.32), transparent 62%),
     linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
   background-size: 100% 100%, 2.5rem 2.5rem, 2.5rem 2.5rem;
@@ -158,10 +156,10 @@
 }
 
 .flow {
-  max-width: 1200px;
+  max-width: var(--page);
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--pad);
 }
 
 .sectionHead {
@@ -204,12 +202,12 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.02em;
 }
 
 .flowTitle svg {
-  color: var(--accent);
+  color: var(--blue-bright);
   flex: 0 0 auto;
 }
 
@@ -222,19 +220,17 @@
 
 .cta {
   position: relative;
-  max-width: 1200px;
-  width: calc(100% - 3rem);
+  max-width: var(--page);
+  width: calc(100% - 2 * var(--pad));
   margin: 4rem auto;
   padding: 3.5rem 2rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   background:
-    radial-gradient(ellipse 60% 80% at 50% 0%, rgba(0, 112, 243, 0.1), transparent 65%),
-    linear-gradient(rgba(20, 20, 18, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20, 20, 18, 0.035) 1px, transparent 1px);
-  background-size: 100% 100%, 2.5rem 2.5rem, 2.5rem 2.5rem;
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  box-shadow: var(--panel-shadow);
+    radial-gradient(ellipse 60% 80% at 50% 0%, rgba(47, 107, 255, 0.12), transparent 65%),
+    linear-gradient(rgba(166, 188, 230, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(166, 188, 230, 0.05) 1px, transparent 1px),
+    var(--surface);
+  background-size: 100% 100%, 2.5rem 2.5rem, 2.5rem 2.5rem, 100% 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -245,7 +241,7 @@
 .ctaTitle {
   font-size: clamp(1.7rem, 3.4vw, 2.4rem);
   letter-spacing: -0.03em;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .ctaText {
@@ -263,44 +259,9 @@
   margin-top: 0.75rem;
 }
 
-.primaryButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  background: var(--primary-btn);
-  color: var(--primary-btn-text);
-  padding: 0.72rem 1.3rem;
-  border-radius: 0;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.primaryButton:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
-}
-
-.secondaryButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.3rem;
-  border-radius: 0;
-  border: 1px solid var(--secondary-btn-border);
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.secondaryButton:hover {
-  background: rgba(0, 0, 0, 0.05);
-  border-color: rgba(20, 20, 18, 0.4);
-}
-
 @media (max-width: 900px) {
   .pageHeader {
-    padding: 3rem 1.5rem 2.75rem;
+    padding: calc(var(--nav-h) + 3.5rem) var(--pad) 2.75rem;
   }
 
   .span5,
