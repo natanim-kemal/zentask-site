@@ -53,12 +53,10 @@ const FLOW = [
 export default function Features() {
   return (
     <main className={styles.main}>
-      <SiteNav />
+      <SiteNav active="features" />
 
       <header className={styles.pageHeader}>
-        <span className="kicker">
-          <span className="kickerDot" /> Features
-        </span>
+        <span className="kicker">Features</span>
         <h1 className={styles.title}>Power tools for your mind.</h1>
         <p className={styles.subtitle}>
           ZenTask is not just a list. It is a system built to protect your attention and keep you in flow.
@@ -104,13 +102,13 @@ export default function Features() {
         <h2 className={styles.ctaTitle}>Start in under a minute.</h2>
         <p className={styles.ctaText}>No setup ceremony. Open ZenTask, add one task, and let the system do the rest.</p>
         <div className={styles.ctaButtons}>
-          <Link href="/maintenance" className={styles.primaryButton}>
+          <Link href="/maintenance" className="btn btnPrimary">
             Get Started
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
           </Link>
-          <Link href="https://github.com/natanim-kemal/zen-task" className={styles.secondaryButton} target="_blank" rel="noopener noreferrer">
+          <Link href="https://github.com/natanim-kemal/zen-task" className="btn btnGhost" target="_blank" rel="noopener noreferrer">
             View source
           </Link>
         </div>
